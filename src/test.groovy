@@ -1,1 +1,3 @@
-println "ceci est un test"
+def callTest() {
+	println "ceci est un test"
+}
