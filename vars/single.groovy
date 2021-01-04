@@ -1,4 +1,4 @@
-import org.avu.*
+import org.avu.Environment
 
 def getHttpPort(String env) {
 	return org.avu.Environment.Version;
