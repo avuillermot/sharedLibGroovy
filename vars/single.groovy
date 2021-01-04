@@ -2,19 +2,23 @@ def callAvu(String name = 'human') {
     echo "Hello, ${name}."
 }
 
-def envs = [:];
-envs.put("INTC",[:]);
+public class Envs {
+  public static def envs = [:];
+  public static void Init() {
+		println "Environment value initialization"
+		envs.put("INTC",[:]);
 		envs.put("TEST",[:])
 		envs.put("PROD",[:])
 		envs["INTC"].put("HTTP_PORT",8081);
 		envs["TEST"].put("HTTP_PORT",8082);
 		envs["PROD"].put("HTTP_PORT",8083);
-
-def _getHttpPort(envs, String env) {
-	return envs[env]["HTTP_PORT"];
+	}
+  
+	static String getHttpPort(String env) {
+		return envs[env]["HTTP_PORT"];
+	}
 }
 
-def getHttpPort(String env) {
-	return _getHttpPort(envs, env);
-}
+Envs.Init();
+
 
