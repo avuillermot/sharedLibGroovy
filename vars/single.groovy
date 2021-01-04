@@ -1,7 +1,7 @@
-import org.avu.Environment
+import avu.Environment
 
 def getHttpPort(String env) {
-	return org.avu.Environment.Version;
+	return Environment.Version;
 }
 
 def getHttpPortTest(String env) {
