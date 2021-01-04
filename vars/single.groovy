@@ -10,6 +10,11 @@ envs.put("INTC",[:]);
 		envs["TEST"].put("HTTP_PORT",8082);
 		envs["PROD"].put("HTTP_PORT",8083);
 
-def getHttpPort(envs, String env) {
+def _getHttpPort(envs, String env) {
 	return envs[env]["HTTP_PORT"];
 }
+
+def getHttpPort(String env) {
+	return _getHttpPort(envs, env);
+}
+
