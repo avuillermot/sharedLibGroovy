@@ -22,5 +22,7 @@ Envs.Init();
 
 
 def getHttpPort2(String env) {
-	return Envs[env]["HTTP_PORT"];
+	return Envs.envs[env]["HTTP_PORT"];
 }
+
+println getHttpPort2('INTC')
