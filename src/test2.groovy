@@ -1,6 +1,8 @@
 package org.foo
-class Utilities implements Serializable {
-  def mvn() {
-    echo "bbbbbbbbb"
-  }
+
+class Example {
+	static string getHttpPort(String env) {
+		if (env == 'INTC') return "8081";
+		else return "8082";
+	}
 }
