@@ -5,6 +5,7 @@ def callAvu(String name = 'human') {
 public class Envs {
   static def envs = [:];
   static void Init() {
+    println "Environment value initialization"
     envs.put("INTC",[:]);
     envs.put("TEST",[:])
     envs.put("PROD",[:])
@@ -25,4 +26,3 @@ def getHttpPort2(String env) {
 	return Envs.envs[env]["HTTP_PORT"];
 }
 
-println getHttpPort2('INTC')
