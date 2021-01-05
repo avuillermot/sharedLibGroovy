@@ -9,9 +9,20 @@ public class Environment {
   public static final String Version = "1.0"
   
   public static final getBranches() {
-	def proc = "git ls-remote https://github.com/avuillermot/Tweed  |  awk '{print \$2}'".execute();
+	def proc = "git ls-remote https://github.com/avuillermot/Tweed.git".execute();
 	def outputStream = new StringBuffer();
 	proc.waitForProcessOutput(outputStream, System.err);
-	println(outputStream.toString());
+
+	def results = outputStream.toString().split('\n');
+	def back = new String[results.size() - 1];
+	def index = 0;
+	results.each{
+	  if (it.split('/heads/').length > 1) {
+		back.putAt(index,it.split('/heads/')[1]);
+		index++;
+	  }
+	}
+
+	return back;
   }
 }
